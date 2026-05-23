@@ -1,0 +1,234 @@
+/* Основные стили для страницы */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e9f7f1; /* Светло-зеленый фон */
+    margin: 0;
+    padding: 0;
+    color: #333; /* Цвет текста по умолчанию */
+}
+
+.logo {
+    flex-grow: 1; /* Логотип займет всё доступное пространство слева */
+}
+
+.site-title {
+    font-size: 28px; /* Размер шрифта для названия сайта */
+    font-weight: 700;
+    color: white; /* Темно-зеленый цвет */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.site-title:hover {
+    color: #a1e8a7; /* Светлый зеленый при наведении */
+}
+
+header {
+    background-color: #2c6b45; /* Темно-зеленый фон */
+    color: white;
+    padding: 10px 0;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #2c6b45; /* Темно-зеленый фон */
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin: 0 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #a1e8a7; /* Светлый зеленый при наведении */
+}
+
+/* Стили для ссылок */
+a {
+    color: #007B55; /* Темно-зеленый цвет для ссылок */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #005d3f; /* Более темный зеленый при наведении */
+}
+
+/* Основные стили для форм */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+    border-color: #007B55; /* Темно-зеленый цвет для фокуса */
+}
+
+button {
+    background-color: #2c6b45; /* Темно-зеленый цвет кнопки */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #a1e8a7; /* Светлый зеленый при наведении */
+}
+
+/* Основные стили для контента */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Стили для футера */
+footer {
+    background-color: #2c6b45; /* Темно-зеленый фон */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 50%;
+    bottom: 0;
+}
+
+/* Стили для сообщений */
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+p[style*="color: green"] {
+    color: #2c6b45; /* Зеленый цвет для успешных сообщений */
+}
+
+/* Стиль для блоков контента */
+.block-content {
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #f0f8f1; /* Светло-зеленый фон для блоков */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+
+.excursion-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center; /* вместо space-between */
+}
+
+
+.excursion-card {
+  width: 100px; /* фиксированная ширина */
+  max-width: 100%;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 15px;
+  margin: 0 auto; /* чтобы по центру */
+}
+
+
+.excursion-thumb {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.excursion-info {
+  padding: 10px;
+}
+
+.excursion-title {
+  font-size: 18px;
+  margin: 10px 0 5px;
+}
+
+.excursion-price {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.details-button {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #007BFF;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.details-button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 900px) {
+  .excursion-card {
+    width: calc(50% - 10px);
+  }
+}
+
+@media (max-width: 600px) {
+  .excursion-card {
+    width: 100%;
+  }
+}
+
+

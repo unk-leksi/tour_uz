@@ -1,0 +1,79 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+  <style>
+    .excursion-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .excursion-card {
+      width: 280px;
+      max-width: 100%;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding-bottom: 15px;
+      margin: 10px;
+    }
+
+    .excursion-thumb {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .excursion-info {
+      padding: 10px;
+    }
+
+    .excursion-title {
+      font-size: 18px;
+      margin: 10px 0 5px;
+    }
+
+    .excursion-price {
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .details-button {
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: #007BFF;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .details-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+
+  <div class="container">
+    <h1 class="page-title">Наши Экскурсии</h1>
+
+    <div class="excursion-grid">
+      {% for excursion in excursions %}
+        <div class="excursion-card">
+          <img src="{{ excursion.image.url }}" alt="{{ excursion.title }}" class="excursion-thumb">
+          <div class="excursion-info">
+            <h2 class="excursion-title">{{ excursion.title }}</h2>
+            <p class="excursion-price">Цена: ${{ excursion.price }}</p>
+            <a href="{% url 'excursions:excursion_detail' excursion.id %}" class="details-button">Подробнее</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

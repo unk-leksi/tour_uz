@@ -1,0 +1,54 @@
+{% load static %}
+
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Добавлено для мобильных устройств -->
+    <title>{% block title %}Сайт экскурсий по Узбекистану{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+       <nav>
+    <div class="logo">
+        <a href="{% url 'excursions:excursion_list' %}" class="site-title">SilkWay Tours</a>
+    </div>
+    <ul>
+        <li><a href="{% url 'excursions:excursion_list' %}">Экскурсии</a></li>
+        {% if user.is_authenticated %}
+            <li><a href="{% url 'dashboard' %}">Личный кабинет</a></li>
+
+            <li>
+    <form id="logout-form" action="{% url 'logout' %}" method="POST" style="display: none;">
+        {% csrf_token %}
+    </form>
+    <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Выйти</a>
+</li>
+
+
+        {% else %}
+            <li><a href="{% url 'login' %}">Вход</a></li>
+            <li><a href="{% url 'signup' %}">Регистрация</a></li>
+        {% endif %}
+    </ul>
+</nav>
+
+    </header>
+
+    <main>
+        {% if messages %}
+            {% for message in messages %}
+                <p style="color: green">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+        {% block content %}{% endblock %}
+    </main>
+
+    <script src="{% static 'scripts.js' %}"></script>
+</body>
+</html>

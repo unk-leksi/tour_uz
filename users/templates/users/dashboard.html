@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Личный кабинет{% endblock %}
+
+{% block content %}
+<div class="dashboard">
+  <h2>Добро пожаловать, {{ user.username }}!</h2>
+  <h3>Ваши заказы:</h3>
+  {% if orders %}
+    <ul>
+      {% for order in orders %}
+        <li>
+          Экскурсия: <strong>{{ order.excursion.title }}</strong><br>
+          Дата: {{ order.excursion.date }}<br>
+          Заказано!
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>Вы ещё не купили ни одной экскурсии.</p>
+  {% endif %}
+</div>
+{% endblock %}
