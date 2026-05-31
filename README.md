@@ -40,17 +40,17 @@ tour_uz/
    git clone https://github.com/unk-leksi/tour_uz.git
    cd tour_uz
 2. **Create and activate a virtual environment:**
-
-bash
+```bash
 python -m venv venv
 source venv/bin/activate      # Linux/macOS
 venv\Scripts\activate         # Windows
+```
 3. **Install dependencies:**
 
-bash
+```bash
 pip install -r requirements.txt
 (If requirements.txt doesn't exist yet, generate it with pip freeze > requirements.txt)
-
+```
 4. **Apply database migrations:**
 
 bash
