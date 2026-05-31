@@ -36,9 +36,10 @@ tour_uz/
 ## 🧪 Quick Start Guide
 
 1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/unk-leksi/tour_uz.git
-   cd tour_uz
+```bash
+git clone https://github.com/unk-leksi/tour_uz.git
+cd tour_uz
+```
 2. **Create and activate a virtual environment:**
 ```bash
 python -m venv venv
@@ -46,25 +47,26 @@ source venv/bin/activate      # Linux/macOS
 venv\Scripts\activate         # Windows
 ```
 3. **Install dependencies:**
-
 ```bash
 pip install -r requirements.txt
 (If requirements.txt doesn't exist yet, generate it with pip freeze > requirements.txt)
 ```
 4. **Apply database migrations:**
 
-bash
+```bash
 python manage.py migrate
+```
 5. **Create a superuser (admin account):**
 
-bash
+```bash
 python manage.py createsuperuser
-
+```
 6. **Run the development server:**
 
-bash
+```bash
 python manage.py runserver
 Open your browser and navigate to: http://127.0.0.1:8000
+```
 
 📌 Project Status
 This project is in its early stages (Initial commit). Active development is ongoing.
